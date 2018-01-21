@@ -1,0 +1,11 @@
+//テンプレートクラス
+//このファイルをコピーして共通部品を作成する。
+CLASS Template
+
+	//Testメソッド
+	Function Test()
+	
+		//処理を記述する。
+		
+	FEND
+ENDCLASS

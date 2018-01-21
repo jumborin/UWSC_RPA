@@ -1,0 +1,9 @@
+//実行する側のクラス
+
+//本ファイル内で使用する共通部品クラスを定義
+CALL Class_Template.uws
+
+//実行
+Template.test()
+
+
