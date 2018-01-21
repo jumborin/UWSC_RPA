@@ -1,0 +1,63 @@
+//CSVファイルを操作するクラス
+CLASS CsvFileControl
+
+	//変数を定義
+	DIM 情報リスト
+	DIM 行No
+	DIM ファイルID
+	DIM 行データ
+	DIM ファイル行数
+
+
+	//CSVを読込、配列にして返却する。
+	FUNCTION read(ファイル名)
+		
+		//ファイルを開く
+		ファイルID = FOPEN(ファイル名, F_READ)
+			
+			//ファイル行数を取得する
+			ファイル行数 = FGET(ファイルID,F_LINECOUNT)
+			
+			//ファイル行数分の要素を持った配列を作成する。
+			DIM 配列[ファイル行数]
+			
+			//ファイルの内容を1行ずつ読み込む
+			FOR 行No = 1 TO ファイル行数
+				配列[行No] = FGET(ファイルID,行No)
+			NEXT
+		
+		//ファイルを閉じる
+		FCLOSE(ファイルID)
+		
+		//戻り値として配列変数を返却する
+		RESULT = SLICE(配列,1,ファイル行数)
+	FEND
+	
+	//指定したファイルに指定した値を書込む
+	FUNCTION write(ファイル名,値)
+		
+		//書込みモードでファイルを開く
+		ファイルID = FOPEN(ファイル名, F_READ or F_WRITE)
+		
+		//末尾に追記
+		FPUT(ファイルID,値,0)
+		
+		//ファイルを閉じる
+		FCLOSE(ファイルID)
+		RESULT = True
+	FEND
+	
+	//ファイルの内容をメッセージボックスに表示する。
+	FUNCTION readAndOutput(ファイル名)
+		//ファイルを開く
+		ファイルID = FOPEN(ファイル名, F_READ)
+		
+		//ファイルの内容をメッセージボックスに表示する
+		MSGBOX(FGET(ファイルID,F_ALLTEXT))
+		
+		//ファイルを閉じる
+		FCLOSE(ファイルID)
+		RESULT = True
+	FEND
+	
+ENDCLASS

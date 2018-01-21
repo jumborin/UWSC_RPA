@@ -1,0 +1,18 @@
+
+
+//test.csvファイルに1行追加し、読み込む。
+DIM ファイル名 = "C:\Users\jumborin\Desktop\UWSC_RPA\test.csv"
+
+
+CALL FileCtrl.uws
+
+
+CsvFileControl.write(ファイル名,"ああああ,いいいい")
+
+
+配列 = CsvFileControl.read(ファイル名)
+
+PRINT 配列[0]
+
+//ログウインドウを表示する。
+LOGPRINT(TRUE)
