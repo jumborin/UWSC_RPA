@@ -4,7 +4,7 @@
 DIM ファイル名 = "C:\Users\jumborin\Desktop\UWSC_RPA\test.csv"
 
 
-CALL FileCtrl.uws
+CALL ..\src\FileCtrl.uws
 
 
 CsvFileControl.write(ファイル名,"ああああ,いいいい")
