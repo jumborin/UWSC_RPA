@@ -1,0 +1,39 @@
+//日付クラス
+CLASS DateCtrl
+
+	//本日日付を8桁で返却する
+	Function today_str()
+		GETTIME()
+		DIM str
+		str = "" + G_TIME_YY + "" + G_TIME_MM2 + "" + G_TIME_DD2
+		RESULT = str
+	FEND
+
+	//本日日付をYYYY/MM/DD形式で返却する
+	Function today_slash()
+		GETTIME()
+		DIM now
+		now = "" + G_TIME_YY + "/" + G_TIME_MM2 + "/" + G_TIME_DD2
+		RESULT = now
+	FEND
+
+	//本日日付をYYYY-MM-DD形式で返却する
+	Function today_hyphen()
+		GETTIME()
+		DIM now
+		now = "" + G_TIME_YY + "-" + G_TIME_MM2 + "-" + G_TIME_DD2
+		RESULT = now
+	FEND
+
+	DIM startTime
+	//カウントスタート
+	Procedure count_start()
+		startTime = GETTIME()
+	FEND
+	
+	//カウント終了
+	Function count_end()
+		 RESULT = GETTIME() - startTime
+	FEND
+	
+ENDCLASS

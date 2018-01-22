@@ -1,0 +1,21 @@
+
+LOGPRINT(TRUE)
+
+CALL ..\src\DateCtrl.uws
+
+PRINT "本日日付(YYYYMMDD)"
+PRINT DateCtrl.today_str()
+
+PRINT "本日日付(YYYY/MM/DD)"
+PRINT DateCtrl.today_slash()
+
+PRINT "本日日付(YYYY-MM-DD)"
+PRINT DateCtrl.today_hyphen()
+
+PRINT "処理の経過秒を表示する。"
+DateCtrl.count_start()
+SLEEP(1)
+PRINT DateCtrl.count_end()
+
+//ログウインドウを表示する。
+LOGPRINT(TRUE)
