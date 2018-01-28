@@ -7,10 +7,10 @@ DIM ファイル名 = "C:\Users\jumborin\Desktop\UWSC_RPA\test.csv"
 CALL ..\src\FileCtrl.uws
 
 
-CsvFileControl.write(ファイル名,"ああああ,いいいい")
+FileCtrl.write(ファイル名,"ああああ,いいいい")
 
 
-配列 = CsvFileControl.read(ファイル名)
+配列 = FileCtrl.read(ファイル名)
 
 PRINT 配列[0]
 

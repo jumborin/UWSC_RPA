@@ -1,5 +1,5 @@
 //CSVファイルを操作するクラス
-CLASS CsvFileControl
+CLASS FileCtrl
 
 	//変数を定義
 	DIM 情報リスト
