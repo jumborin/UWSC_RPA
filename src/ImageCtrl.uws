@@ -1,0 +1,32 @@
+//画面内で画像検索をしてクリックするクラス
+CLASS ImageCtrl
+
+	//変数を定義
+	DIM X座標
+	DIM Y座標
+	
+	
+	// 指定画像が存在するかをチェックする
+	FUNCTION isImage(画像ファイル名)
+		IFB CHKIMG(画像ファイル名) // 認識させたい画像ファイルを指定する
+			X座標 = G_IMG_X
+			Y座標 = G_IMG_Y
+			RESULT = True
+		ELSE
+			X座標 = 0
+			Y座標 = 0
+			RESULT = False
+		ENDIF
+	FEND
+	
+	//画像の左上X座標を取得する。
+	FUNCTION getX()
+		RESULT = X座標
+	FEND
+	
+	//画像の左上Y座標を取得する。
+	FUNCTION getY()
+		RESULT = Y座標
+	FEND
+	
+ENDCLASS

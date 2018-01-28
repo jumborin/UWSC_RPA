@@ -1,0 +1,17 @@
+// ImageCtrlクラスのテストクラス
+
+// クラスファイルを読込
+CALL ..\src\ImageCtrl.uws
+
+// 画像ファイルを検索する。
+ImageCtrl.isImage("test.bmp")
+
+PRINT "X座標"
+PRINT ImageCtrl.getX()
+
+PRINT "Y座標"
+PRINT ImageCtrl.getY()
+
+
+//ログウインドウを表示する。
+LOGPRINT(TRUE)
