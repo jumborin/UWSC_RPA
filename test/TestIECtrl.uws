@@ -1,0 +1,20 @@
+// IECtrlクラスのテストクラス
+
+// クラスファイルを読込
+CALL ..\src\IECtrl.uws
+
+// Googleを起動する。
+IECtrl.start("http://google.co.jp")
+
+// Googleを開いているIEのウインドウでyahoo検索を開く。
+IECtrl.move("google","https://search.yahoo.co.jp/")
+
+// yahooを開いているIEのウインドウ内にある入力欄に「Codezine」と入力する。
+IECtrl.input("yahoo","yschsp","Codezine")
+
+// yahoo検索を開いているIEのウインドウでCodezineを開く。
+IECtrl.move("yahoo","https://codezine.jp/")
+
+// Codezineを開いているIEのウインドウ内にある「ログインはこちら」ボタンをクリックする。
+IECtrl.click("Codezine","ログイン")
+
